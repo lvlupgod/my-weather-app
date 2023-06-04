@@ -6,6 +6,7 @@ const { query } = require('express')
 const request = require('postman-request')
 const forecast = require('./utils/forecast')
 
+const PORT = process.env.Port || 3000
 const app = express()
 
 const publicDirectoryPath = path.join(__dirname , '../public')
@@ -83,6 +84,6 @@ app.get('*' , (req,res) => {
 
 
 
-app.listen(3000 , () => {
+app.listen(PORT , () => {
     console.log('Server is up on port 3000')
 })
